@@ -9,6 +9,7 @@ public class TicTacToeGame {
 		char userLetter = chooseUserLetter(userInput);
 		char computerLetter = (userLetter == 'X') ? 'O' : 'X';
 		char[] board = createBoard();
+		boolean userPlay = checkFirstPlayer();
 		showBoard(board);
 		userPosition(userLetter, board);
 		checkFreeSpace(board);
@@ -90,6 +91,23 @@ public class TicTacToeGame {
 		{
 			System.out.println("Free space is not available, Board is full");
 		}
+	}
+	private static boolean checkFirstPlayer() {
+		int Head=0;
+		boolean userPlay;
+		Scanner scanner = new Scanner(System.in);
+		double randomNum = Math.floor(Math.random()*10)%2;
+		if ( randomNum == Head )
+		{
+			System.out.println("computer starts to play first");
+			userPlay=false;
+		}
+		else
+		{
+			System.out.println("User starts to play first");
+			userPlay=true;
+		}
+		return userPlay;
 	}
 }
 
