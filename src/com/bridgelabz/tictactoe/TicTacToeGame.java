@@ -11,6 +11,7 @@ public class TicTacToeGame {
 		char[] board = createBoard();
 		showBoard(board);
 		userPosition(userLetter, board);
+		checkFreeSpace(board);
 	}
 	private static char[] createBoard() {
 		char[] board = new char[10];
@@ -69,11 +70,26 @@ public class TicTacToeGame {
 					break;
 				}
 			}
-			else {
-				System.out.println("Position is not free! Letter is entered");
-			}
 		}
 		showBoard(board);
+	}
+	private static void checkFreeSpace(char[] board) {
+		boolean freeSpace=false;
+		for(int index=0;index<board.length;index++)
+		{
+			if(board[index] == ' ')
+			{
+				freeSpace=true;
+			}
+		}
+		if(freeSpace == true)
+		{
+			System.out.println("Free space is available for the next move");
+		}
+		else
+		{
+			System.out.println("Free space is not available, Board is full");
+		}
 	}
 }
 
