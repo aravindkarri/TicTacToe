@@ -13,12 +13,12 @@ public class TicTacToeGame {
 		showBoard(board);
 		while(true) {
 		playerTurn(userLetter, board);
-		if(winner(board,userLetter)) {
+		if(winner(board,userLetter, computerLetter)) {
 			break;
 		}
 		showBoard(board);
 		computerTurn(computerLetter, board);
-		if (winner(board,computerLetter))
+		if (winner(board,userLetter,computerLetter))
 		{
 			break;
 		}
@@ -146,22 +146,22 @@ public class TicTacToeGame {
 		System.out.println("Computer chose "+ computerMove);
 		placeMove(board,computerMove,computerLetter);
 	}
-	private static boolean winner(char[] board,char symbol)
+	private static boolean winner(char[] board,char userLetter,char computerLetter)
 	{
-		if (( board[0] == symbol && board[1] == symbol && board[2] == symbol )|| 
-				(board[3] == symbol && board[4] == symbol && board[5] == symbol)||
-				(board[6] == symbol && board[7] == symbol && board[8] == symbol)|| 
-				(board[0] == symbol && board[4] == symbol && board[8] == symbol)||
-				(board[2] == symbol && board[4] == symbol && board[6] == symbol))
+		if (( board[0] == userLetter && board[1] == userLetter && board[2] == userLetter )|| 
+				(board[3] == userLetter && board[4] == userLetter && board[5] == userLetter)||
+				(board[6] == userLetter && board[7] == userLetter && board[8] == userLetter)|| 
+				(board[0] == userLetter && board[4] == userLetter && board[8] == userLetter)||
+				(board[2] == userLetter && board[4] == userLetter && board[6] == userLetter))
 		{
 			showBoard(board);
 			System.out.println("Player win the game");
 		}
-		else if (( board[0] == symbol && board[1] == symbol && board[2] == symbol )|| 
-				(board[3] == symbol && board[4] == symbol && board[5] == symbol)||
-				(board[6] == symbol && board[7] == symbol && board[8] == symbol)|| 
-				(board[0] == symbol && board[4] == symbol && board[8] == symbol)||
-				(board[2] == symbol && board[4] == symbol && board[6] == symbol))
+		else if (( board[0] == computerLetter && board[1] == computerLetter && board[2] == computerLetter )|| 
+				(board[3] == computerLetter && board[4] == computerLetter && board[5] == computerLetter)||
+				(board[6] == computerLetter && board[7] == computerLetter && board[8] == computerLetter)|| 
+				(board[0] == computerLetter && board[4] == computerLetter && board[8] == computerLetter)||
+				(board[2] == computerLetter && board[4] == computerLetter && board[6] == computerLetter))
 		{
 			showBoard(board);
 			System.out.println("Computer win the game");
