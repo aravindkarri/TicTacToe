@@ -13,7 +13,7 @@ public class TicTacToeGame {
 		showBoard(board);
 		while(true) {
 		playerTurn(userLetter, board);
-		if(winner(board,userLetter,computerLetter)) {
+		if(winner(board,userLetter, computerLetter)) {
 			break;
 		}
 		showBoard(board);
@@ -156,6 +156,7 @@ public class TicTacToeGame {
 		{
 			showBoard(board);
 			System.out.println("Player win the game");
+			System.exit(0);
 		}
 		else if (( board[0] == computerLetter && board[1] == computerLetter && board[2] == computerLetter )|| 
 				(board[3] == computerLetter && board[4] == computerLetter && board[5] == computerLetter)||
@@ -165,6 +166,7 @@ public class TicTacToeGame {
 		{
 			showBoard(board);
 			System.out.println("Computer win the game");
+			System.exit(0);
 		}
 			
 			
